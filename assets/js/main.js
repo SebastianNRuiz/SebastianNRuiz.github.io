@@ -90,10 +90,10 @@
 				||	browser.mobile)					// Mobile devices
 					off();
 
-			// Enable everywhere else.
+			// Enable everywhere else. 2nd line of breakpoints "on" for scrolling background
 				else {
 
-					breakpoints.on('>large', on);
+					breakpoints.on('>large', off);
 					breakpoints.on('<=large', off);
 
 				}
