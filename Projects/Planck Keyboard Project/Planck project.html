@@ -8,6 +8,9 @@
 		<link rel="stylesheet" href="/Portfolio/assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="/portfolio/assets/css/noscript.css" /></noscript>
 		<link rel="icon" href="/images/Logo.PNG">
+		<style>
+			h2.small_margin{margin-bottom: 0em; font-size: 1.35em; letter-spacing: 0.05em;}
+		</style>
 	</head>
 	<body class="is-preload">
 		<!-- Wrapper -->
@@ -48,28 +51,20 @@
 						<div class="inner">
 							<h1>40% Mechanical Keyboard Project</h1>
 							<span class="image main"><img src="IMG_4479(1).jpg" alt="" /></span>
+							<h1>Introduction</h1>
 							<p>
-								For the uninitiated, a mechanical keyboard is a keyboard that is made up of individual mechanical switches for each key, as opposed to a membrane keyboard which has a single piece of rubber that is pressed down to register a key press. While it is technically a slower keyboard as the fingers have to travel further down to press the keys, it allows for more customization of the design, as well as sounding much nicer. These keyboards are organized into multiple categories, starting with full-size or 100% (including a number pad), and progressively getting smaller, with the percentage representing the size of the keyboard compared to a full size keyboard. A 40% keyboard is what one would consider to be the smallest usable keyboard, with it only including the characters, arrows, and a few modifiers (shift, control, alt, etc.). 
+								<span class="image right"><img src="100vs40.jpg"></span>
+								<h2 class="small_margin">What is a 40% Mechanical Keyboard?</h2>
+								For the uninitiated, a mechanical keyboard is a keyboard that is made up of individual mechanical switches for each key, as opposed to a membrane keyboard which has a single piece of rubber that is pressed down to register a key press. While it is technically a slower keyboard as the fingers have to travel further down to press the keys, it allows for more customization of the design, as well as sounding much nicer. These keyboards are organized into multiple categories, starting with full-size or 100% (including a number pad), and progressively getting smaller, with the percentage representing the size of the keyboard compared to a full-size keyboard. A 40% keyboard is what one would consider to be the smallest usable keyboard, with it only including the characters, arrows, and a few modifiers (shift, control, alt, etc.). 
 							</p>
 							<p>
 								<span class="image left"><img src="IMG_1053(1).jpg" alt="" /></span>
+								<h2 class="small_margin">Where did this interest originate?</h2>
 								This interest started back in 2021 while browsing Thingiverse when I came across the <u><a href="https://www.thingiverse.com/thing:3467930">Wakizashi Keyboard</a></u>. I was immediately hooked and decided that I would make one. After purchasing the necessary parts and printing the rest, I had the tedious task of soldering the layout by what is called "hand wiring". This is where you connect all of the switches in a matrix, with columns and rows that are connected to a microcontroller, which can detect when the switches close the circuit, and tell the computer which key was pressed. A few very long hours of soldering countless junctions later, I had myself a 40% keyboard. Not having access to a resin printer, I had to use an FDM printer to print out the keycaps, which did not have sufficient precision to fit on the stems of the switches, which was time-consuming and still left the keycaps rubbing with the case. Along with some firmware compatibility and soldering issues, this led to it becoming a dust collector, finding its place neatly in a drawer.
 							</p>
 							<p>
-								<span class="image right"><img src="Screenshot 2025-06-19 153203.png" alt="" /></span>
-								Some years later in 2025, while searching through an electronics recycling, I found what appeared to be a cashier that used mechanical switches for the keys. After painstakingly desoldering all the switches, I was left with 48 switches and keycaps. After some research, I found that a very popular keyboard with the number of switches that I had harvested was the "Planck". After specifying the layout on a keyboard configurator, I was able to plug it into <u><a href="http://builder.swillkb.com/">a website that generates the plate design</a></u> according to the switch geometry (which is standardized). I then dropped this into Onshape along with a 3d model of the microcontroller that I would be using, and designed a case that would fit the plate and microcontroller using the leftover hardware from my <u><a href="#">Nano Long Range Project</a></u>. I decided to use a "captive nut" design to hold the case together, where the nuts are held in place by a tapering hexagonal hole, which allows for the use of nuts without a very tight tolerance during 3d printing (preventing the rattling issue that I had during the previous build). This then got 3d printed using very overkill carbon fiber reinforced nylon.
-							</p>
-							<p>
-								<span class="image left"><img src="IMG_4485.jpg" alt="" /></span>
-								Following the very convoluted experience of programming my first keyboard using QMK on the Arduino pro micro, I knew there had to be a better alternative. After looking around for a microcontroller with a usb-c connector and hopefully better firmware, I found that people were starting to use the RP2040 chipset, which could be found in the Waveshare RP2040-zero. Upon more research, I found that there's an alternative to QMK by the name of KMK, which interacts with the computer as both an HID device (Keyboard) and a storage device, allowing you to make changes to the configuration of the keyboard while it is still on, unlike QMK where you had to re-flash the firmware with the changed configuration every time, resetting the keyboard in the process. I also found that there was a program by the name of <u><a href="https://pog.heaper.de/">POG</a></u> that makes the configuration process a lot easier by turning it into a step-by-step installation process and graphical configuration workspace.
-							</p>
-							<p>
-								<span class="image right"><img src="IMG_4475.jpg" alt="" /></span>
-								With all the components figured out, the time had come to solder the keyboard! This starts by soldering the diodes to the switches (allows for multiple keys pressed at once), followed by soldering them to the row wires. The same is then done in the vertical direction by soldering the switches together with smaller gauge wires in columns. This is followed by wiring each of the rows and columns to a pin on the microcontroller that is later specified in KMK. Then, all that is left is to secure the microcontroller to the base and assemble the case with the very excessive 24 pairs of m2 screws and nuts. 
-							</p>
-							<p>
-								<!--<span class="image left"><img src="IMG_4480.jpg" alt="" /></span>-->
-								<b>But why?</b> Besides the fact that it's something that I find really interesting and formative, I decided to also try and learn this keyboard and become proficient in it because of the following reasons:
+								<h2 class="small_margin">Why do this project?</h2>
+								Besides the fact that it's something that I find really interesting and formative, I decided to also try and learn this keyboard and become proficient in it because of the following reasons:
 								<ul>
 									<li>
 										<b>Portability</b><br>
@@ -80,13 +75,53 @@
 										The big selling point for people looking into this form factor when it comes to ergonomics and typing for long sessions is the comfort that it allows and how it is a lot better if trying to touch type more efficiently. This is because of the simple fact that every single key is literally one key away, meaning that you do not need to stretch your fingers every time you reach for "backspace". Additionally, since all of the keys that you don't get at "face value" are hidden behind layers, and they're all a key away, you don't have to take your eyes off of the screen when going for the function row. What this really means is that it allows you to be much more precise on keys that are not in the direct vicinity of your fingers.
 									</li>
 									<li>
+										<span class="image right"><img src="QWERTY-vs-Dvorak.webp"></span>
 										<b>Excuse to learn Dvorak</b><br>
-										In case you didn't know, the traditional keyboard layout (qwerty) was designed in the late 1800s to prevent typewriter jamming because of two letters being typed right next together in quick succession. Since we no longer have that problem, people went out and designed layouts that are more optimized for comfort and overall efficiency. Among these, <u><a href="https://en.wikipedia.org/wiki/Dvorak_keyboard_layout">Dvorak</a></u> is the most popular. To give you an idea of what I mean: on qwerty, 32% of keystrokes are done on the home row (the middle row, where the "dimples" are), while 70% of keystrokes on Dvorak are on the home row. What this means is that your fingers move a lot less up and down, making it more comfortable, and healthy in the long run.
+										In case you didn't know, the traditional keyboard layout (qwerty) was designed in the late 1800s to prevent typewriter jamming because of two letters being typed right next together in quick succession. Since we no longer have that problem, people went out and designed layouts that are more optimized for comfort and overall efficiency. Among these, <u><a href="https://en.wikipedia.org/wiki/Dvorak_keyboard_layout">Dvorak</a></u> is the most popular. To give you an idea of what I mean: on Qwerty, 32% of keystrokes are done on the home row (the middle row, where the "dimples" are), while 70% of keystrokes on Dvorak are on the home row. What this means is that your fingers move a lot less up and down, making it more comfortable, and healthy in the long run.
+										<br>
+										<br>
+										The image to the right is a heatmap of keys used by frequency, with red representing the most used key, and light blue representing the least used keys. 
+									</li>
+								</ul>
+							</p>
+							<h1>Design & Manufacturing</h1>
+							<p>
+								<span class="image right"><img src="Screenshot 2025-06-19 153203.png" alt="" /></span>
+								<h2 class="small_margin">How was this keyboard designed?</h2>
+								Some years later in 2025, while searching through an electronics recycling, I found what appeared to be a cashier that used mechanical switches for the keys. After painstakingly desoldering all the switches, I was left with 48 switches and keycaps. After some research, I found that a very popular keyboard with the number of switches that I had harvested was the "Planck". After specifying the layout on a <u><a href="https://www.keyboard-layout-editor.com/##@@_a:7%3B&=Tab&='&=,&=.&=P&=Y&=F&=G&=C&=R&=L&=Back%20Space%3B&@=Esc&=A&=O&=E&=U&=I&=D&=H&=T&=N&=S&=%2F%2F%3B&@=Shift&=%2F%3B&=Q&=J&=K&=X&=B&=M&=W&=V&=Z&=Return%3B&@=Play%2F%2FPause&=Ctrl&=Alt&=Super&=%2F&dArr%2F%3B&=&=&=%2F&uArr%2F%3B&=%2F&larr%2F%3B&=%2F&darr%2F%3B&=%2F&uarr%2F%3B&=%2F&rarr%2F">keyboard configurator</a></u>, I was able to plug it into <u><a href="http://builder.swillkb.com/">a website that generates the plate design</a></u> according to the switch geometry (which is standardized). I then dropped this into Onshape along with a 3d model of the microcontroller that I would be using, and designed a case that would fit the plate and microcontroller using the leftover hardware from my <u><a href="#">Nano Long Range Project</a></u>. I decided to use a "captive nut" design to hold the case together, where the nuts are held in place by a tapering hexagonal hole, which allows for the use of nuts without a very tight tolerance during 3d printing (preventing the rattling issue that I had during the previous build). This then got 3d printed using very overkill carbon fiber reinforced nylon.
+							</p>
+							<p>
+								<span class="image left"><img src="IMG_4485.jpg" alt="" /></span>
+								<h2 class="small_margin">Making the keyboard talk to the computer!</h2>
+								Following the very convoluted experience of programming my first keyboard using QMK on the Arduino Pro micro, I knew there had to be a better alternative. After looking around for a microcontroller with a usb-c connector and hopefully better firmware, I found that people were starting to use the RP2040 chipset, which could be found in the Waveshare RP2040-zero. Upon more research, I found that there's an alternative to QMK by the name of KMK, which interacts with the computer as both an HID device (Keyboard) and a storage device, allowing you to make changes to the configuration of the keyboard while it is still on, unlike QMK where you had to re-flash the firmware with the changed configuration every time, resetting the keyboard in the process. I also found that there was a program by the name of <u><a href="https://pog.heaper.de/">POG</a></u> that makes the configuration process a lot easier by turning it into a step-by-step installation process and graphical configuration workspace.
+							</p>
+							<p>
+								<span class="image right"><img src="IMG_4475.jpg" alt="" /></span>
+								<h2 class="small_margin">Soldering together the keyboard</h2>
+								With all the components figured out, the time had come to solder the keyboard! This starts by soldering the diodes to the switches (allows for multiple keys pressed at once), followed by soldering them to the row wires. The same is then done in the vertical direction by soldering the switches together with smaller gauge wires in columns. This is followed by wiring each of the rows and columns to a pin on the microcontroller that is later specified in KMK. Then, all that is left is to secure the microcontroller to the base and assemble the case with the very excessive 24 pairs of m2 screws and nuts. 
+							</p>
+							<h1>Conclusion</h1>
+							<p>
+								<h2 class="small_margin">What would I do differently?</h2>
+								If I had the opportunity to start this project from the absolute beginning, I would change the following aspects of the physical design:
+								<ul>
+									<li>
+										<b>Increase frame rigidity</b><br>
+										While decreasing the thickness of the printed parts of the frame led to a very light final product, making it ever more portable, if I were to design this keyboard again, I would like to include some form of internal material that gives it structural rigidity, such as carbon fiber. The only issue with this approach is that while I do have a piece of carbon fiber that I found at the same place as the switches and keycaps, I do not have any safe way to cut it into a shape that could be used to improve the rigidity of the keyboard, and I personally don't want to have carbon splinters in my lungs from doing it unsafely.
+									</li>
+									<li>
+										<b>Improve microcontroller holder</b><br>
+										Another pretty big issue with the final design that I put together was the way that I mounted the microcontroller to the bottom plate of the keyboard. Since the microcontroller did not come with mounting holes, I had originally planned to use very strong double-sided tape, but upon mounting it using that approach, I found that since the bottom side of the microcontroller was not entirely flat, the tape was actively unsticking itself, trying to flatten. What I ended up doing was drilling undersized m2-sized holes so that an m2 screw would self-tap into the hole. The screws then have a washer on the end that wedges the microcontroller against the base. While this works and does not inhibit the functionality of the keyboard, it does not look professional at all, with all the screws slightly off perpendicular. I would like to change the base to make space for captive nuts as I had done for connecting the base of the case to the plate, and planning where I would solder the rows and columns to make the screws hold the microcontroller down "non-precariously" on the edges, rather than on the corners.
+									</li>
+									<li>
+										<b>Improve cable routing</b><br>
+										Due to not thinking about the fact that wires take up space, I did not leave enough room to hide the wires coming from the rows and columns to the microcontroller. I have done this, which would have left a much neater final product.
 									</li>
 								</ul>
 							</p>
 							<p>
 								<span class="image left"><img src="IMG_4480.JPG" alt="" /></span>
+								<h2 class="small_margin">What keyboard layout does it use?</h2>
 								To the left is the layout that I am using as of June 2025. 
 								Without modifiers, the layout in the middle is active. If you press the green button to the right of the space bar, you will momentarily get the top layout (will stay on until you release the green button). Likewise, if you press the orange button, you will momentarily get the bottom layout until you release the orange button. While this might seem like a lot of things to remember, the point of this is not to have everything clear and visible, but "hidden and close".
 							</p>
